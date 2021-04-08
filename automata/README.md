@@ -70,7 +70,7 @@ sudo mysql --skip-column-names  --raw umls_meta  -e "select STR, CUI from MRCONS
 # TODO:
 
 - [ ] test wd (non normalised term) and nd - normalised term for aho-corasick
-- [ ] another approach is to select relevant dictionary based on role: Defined Role (Surgeon vs Rentgenolog vs Nurse), select relevant semantic layer from UMLS (based on Semantic Types: Sign or Symptom) and then select corresponding wd or nstr
+- [ ] another approach is to select relevant dictionary based on role: Defined Role (Surgeon vs Radiologist vs Nurse), select relevant semantic layer from UMLS (based on Semantic Types: Sign or Symptom) and then select corresponding wd or nstr
 
 Latest Automata available: 
 
