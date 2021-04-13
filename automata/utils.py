@@ -9,7 +9,8 @@ def loadAutomata():
         Automata=joblib.load("/tmp/automata_fresh_semantic.pkl.lzma")
     except:
         automata_file=urlopen("https://s3.eu-west-2.amazonaws.com/assets.thepattern.digital/automata_fresh_semantic.pkl.lzma")
-        with open('/tmp/automata_syns.lzma', 'wb') as f:
+        
+        with open('/tmp/automata_fresh_semantic.pkl.lzma', 'wb') as f:
             f.write(automata_file.read())
         Automata=joblib.load("/tmp/automata_fresh_semantic.pkl.lzma")    
     log("Automata properties" + str(Automata.get_stats()))
