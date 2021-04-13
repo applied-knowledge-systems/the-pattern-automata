@@ -4,16 +4,14 @@ def loadAutomata():
     from urllib.request import urlopen
     import ahocorasick 
     import joblib
-    Automata=joblib.load("./automata/automata_syns_filtered.pkl.bz2")
-    
 
     try:
-        Automata=joblib.load("/tmp/automata_syns.lzma")
+        Automata=joblib.load("/tmp/automata_fresh_semantic.pkl.lzma")
     except:
-        automata_file=urlopen("https://s3.eu-west-2.amazonaws.com/assets.thepattern.digital/automata_syns.lzma")
+        automata_file=urlopen("https://s3.eu-west-2.amazonaws.com/assets.thepattern.digital/automata_fresh_semantic.pkl.lzma")
         with open('/tmp/automata_syns.lzma', 'wb') as f:
             f.write(automata_file.read())
-        Automata=joblib.load("/tmp/automata_syns.lzma")    
+        Automata=joblib.load("/tmp/automata_fresh_semantic.pkl.lzma")    
     log("Automata properties" + str(Automata.get_stats()))
     return Automata
 
