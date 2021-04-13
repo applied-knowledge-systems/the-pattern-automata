@@ -1,4 +1,3 @@
-from common.utils import *
 
 def loadAutomata():
     from urllib.request import urlopen
@@ -13,7 +12,6 @@ def loadAutomata():
         with open('/tmp/automata_fresh_semantic.pkl.lzma', 'wb') as f:
             f.write(automata_file.read())
         Automata=joblib.load("/tmp/automata_fresh_semantic.pkl.lzma")    
-    log("Automata properties" + str(Automata.get_stats()))
     return Automata
 
 def find_matches(sent_text, A):
